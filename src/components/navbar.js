@@ -18,7 +18,7 @@ export class Navbar extends React.Component {
             </div>
             <div id="navbar" className="navbar-collapse collapse">
               <ul className="nav navbar-nav">
-                <li className="active">
+                <li>
                   <Link to="/">Home</Link>
                 </li>
                 <li>
@@ -26,6 +26,9 @@ export class Navbar extends React.Component {
                 </li>
                 <li>
                   <Link to="/contact">Contact</Link>
+                </li>
+                <li>
+                  <Link to="/signup">Signup</Link>
                 </li>
               </ul>
             </div>
