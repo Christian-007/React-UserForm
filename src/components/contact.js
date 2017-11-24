@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Contact extends React.Component {
+class Contact extends React.Component {
   render() {
     return (
       <div className="jumbotron">
@@ -11,3 +11,5 @@ export class Contact extends React.Component {
     )
   }
 }
+
+export default Contact;

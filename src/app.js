@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Navbar } from './components/navbar';
 import { Jumbotron } from './components/jumbotron';
-import { Home } from './components/home';
-import { About } from './components/about';
-import { Contact } from './components/contact';
-import { Signup } from './components/signup';
+import Home from './components/home';
+import About from './components/about';
+import Contact from './components/contact';
+import Signup from './components/signup';
 import { HashRouter as Router, Route } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 
+const store = createStore(
+  (state = {}) => state,
+  applyMiddleware(thunk)
+);
 
 ReactDOM.render(
   <div>
@@ -17,8 +24,7 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <div>
-    <Jumbotron/>
+  <Provider store={store}>
     <Router>
       <div>
         <Route exact path="/" component={Home} />
@@ -27,6 +33,6 @@ ReactDOM.render(
         <Route exact path="/signup" component={Signup} />
       </div>
     </Router> 
-  </div>
+  </Provider>
   ,document.getElementById('react-container')
 )

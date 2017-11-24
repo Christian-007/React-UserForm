@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class About extends React.Component {
+class About extends React.Component {
   render() {
     return (
       <div className="jumbotron">
@@ -11,3 +11,5 @@ export class About extends React.Component {
     )
   }
 }
+
+export default About;
